@@ -19,3 +19,7 @@ class wandrMain():
                 types = pokemonName["Type1"] + pokemonName["Type2"]
                 return types
             print(types)
+            
+
+ia = wandrMain
+ia.getTyping(pokemon="Bulbasaur")
