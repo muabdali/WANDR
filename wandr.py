@@ -20,7 +20,27 @@ class wandrMain():
                 return types
                 # returns types as a list
             
+    def resistanceFinder(self, typeList):
+        data = pd.read_csv(self.gen3TypingChart, index_col=0)
+        for defense in typeList:
+            allTypes = data.loc[defense]
+            resistanceOnly = {key for key, value in allTypes.items() if value == "1/2"}
+            print(resistanceOnly)
+ 
+ 
+    # Finds types that the pokemon is strong AGAINST.
+    # For example, Charmander would return Grass, Ice, Steel and bug because those are the types that get hit 2x from fire.
+    def weaknessFinder(self, typeList):
+        data = pd.read_csv(self.gen3TypingChart, index_col=0)
+        for defense in typeList:
+            allTypes = data.loc[defense]
+            resistanceOnly = {key for key, value in allTypes.items() if value == "2"}
+            print(resistanceOnly)    
 
+
+ia = wandrMain()
+types = ia.getTyping("CHARMANDER")
+ia.weaknessFinder(typeList=types)
 
 """
 Welcome to the main python file for WANDR. Initially made for autoLocke,
