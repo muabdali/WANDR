@@ -18,8 +18,23 @@ class wandrMain():
             if pokemonName["Name"].lower() == pokemon.lower():
                 types = pokemonName["Type1"] + pokemonName["Type2"]
                 return types
-            print(types)
+                # returns types as a list
             
 
-ia = wandrMain
-ia.getTyping(pokemon="Bulbasaur")
+
+"""
+Welcome to the main python file for WANDR. Initially made for autoLocke,
+WANDR is a script that quickly finds the types, weaknesses and resistances for a given Pokemon. (currently up to gen 3)
+
+Order of operations:
+
+First, the program is fed the pokemon's name. For the script to work, the 
+pokemon name must be pre-spellchecked using fuzzywuzzy or something similar.
+
+getTyping gets the typing of the given pokemon, and returns the types
+as a list. For example, Bulbasaur would return ['Grass', 'Poison'].
+
+
+
+
+"""
