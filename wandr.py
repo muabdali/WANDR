@@ -83,7 +83,7 @@ class wandrMain():
             "Dark" :0,        
         }
         for elemental in weaknessList:
-            weaknessDict[elemental] + 2
+            weaknessDict[elemental] += 2
         print(weaknessDict)
             
             
@@ -94,7 +94,7 @@ class wandrMain():
    
 ia = wandrMain()
 types = ia.getTyping("Scyther")
-toa = ia.getWeakness(types)
+toa = ia.getWeakness(types, returnType="giveDict")
 print(toa)
    
     
