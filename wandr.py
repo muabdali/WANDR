@@ -87,6 +87,32 @@ class wandrMain():
             weaknessDict[elemental] += 2
         print(weaknessDict)
         return weaknessDict
+    
+    def resistanceCleanup(self, resistanceList):
+        resistanceDict = {
+            "Ground":0,
+            "Fire":0,
+            "Water":0,
+            "Grass" : 0,
+            "Ice" :0,
+            "Electric" : 0,
+            "Rock" : 0,
+            "Flying" : 0,
+            "Normal" : 0,
+            "Fighting": 0,
+            "Poison" : 0,
+            "Psychic": 0,
+            "Bug": 0,
+            "Ghost": 0,
+            "Dragon" : 0,
+            "Steel" : 0,
+            "Dark" :0, 
+        }
+        for elemental in resistanceList:
+            resistanceDict[elemental] -= 2
+        print(resistanceDict)
+        return resistanceDict
+
             
             
  
