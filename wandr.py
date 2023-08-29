@@ -46,21 +46,22 @@ class wandrMain():
         if returnType == "giveList":
             return weaknesses
         elif returnType == "giveDict":
-            self.weaknessCleanup(weaknessList=weaknesses)
+            weaknessDict = self.weaknessCleanup(weaknessList=weaknesses)
         else:
             return weaknesses
  
         
-    def getResistance(self, typeList):
+    def getResistance(self, typeList, returnType):
         typingChart = pd.read_csv("data/typingChart.csv", index_col="Name")
+        resistances = []
+
         for poketype in typeList:
-            coloumn = typingChart[poketype]
-            typeRow = coloumn[coloumn == "2"]
-            print(typeRow)
-            if not typeRow.empty:
-                return typeRow.index[0]
-            else:
-                return None
+            column = typingChart[poketype]
+            typeWeaknesses = column[column == "1/2"]
+            
+            if not typeWeaknesses.empty:
+                resistances.extend(typeWeaknesses.index.tolist())
+        print(resistances)
 
     def weaknessCleanup(self, weaknessList):
         weaknessDict = {
@@ -85,6 +86,7 @@ class wandrMain():
         for elemental in weaknessList:
             weaknessDict[elemental] += 2
         print(weaknessDict)
+        return weaknessDict
             
             
  
@@ -94,7 +96,7 @@ class wandrMain():
    
 ia = wandrMain()
 types = ia.getTyping("Scyther")
-toa = ia.getWeakness(types, returnType="giveDict")
+toa = ia.getResistance(types, returnType="giveDict")
 print(toa)
    
     
