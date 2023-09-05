@@ -25,7 +25,6 @@ class wandrMain():
         for pokeType in typeList:
             coloumn = typingChart[pokeType]
             typeRow = coloumn[coloumn == "2"]
-            print(typeRow)
             if not typeRow.empty:
                 # returns the type name (ground, water, rock for a fire input)
                 return typeRow.index[0]
@@ -127,11 +126,6 @@ class wandrMain():
     # Finds types that the pokemon is strong AGAINST.
     # For example, Charmander would return Grass, Ice, Steel and bug because those are the types that get hit 2x from fire.
     
-   
-ia = wandrMain()
-types = ia.getTyping("Scyther")
-toa = ia.getResistance(types, returnType="giveDict")
-print(toa)
    
     
 """

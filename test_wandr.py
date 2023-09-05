@@ -9,7 +9,6 @@ def test_typing_type():
     weakness = wM.getWeakness(types, returnType="giveDict")
     assert type(weakness) == dict
     
-    
 def test_getWeakness():
     types = wM.getTyping("Scyther")
     weakness = wM.getWeakness(types)
@@ -24,6 +23,8 @@ def test_getResistance():
     assert type(resistance) == list
     assert resistance[0] == "Water"
     assert resistance[2] == "Grass"
+
+
 
     
 
