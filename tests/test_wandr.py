@@ -1,5 +1,5 @@
 import pytest
-from . import wandr
+from ..src import wandr
 
 wM = wandr.wandrMain()
 

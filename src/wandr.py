@@ -4,7 +4,7 @@ import json
 
 class wandrMain():
     def __init__(self):
-        self.gen3TypingChart = 'data/typingChart.csv'
+        self.gen3TypingChart = 'src/data/typingChart.csv'
     
     
     def WANDR(self, pokemonName):
@@ -12,7 +12,7 @@ class wandrMain():
         
         
     def getTyping(self, pokemon):
-        with open('data/pokeTypeMasterSheet.json') as file:
+        with open('src/data/pokeTypeMasterSheet.json') as file:
             data = json.load(file)
         for pokemonName in data:
             if pokemonName["Name"].lower() == pokemon.lower():
@@ -21,7 +21,7 @@ class wandrMain():
                 # returns types as a list
             
     def getWeaknessDF(self, typeList):
-        typingChart = pd.read_csv("data/typingChart.csv", index_col="Name")
+        typingChart = pd.read_csv("src/data/typingChart.csv", index_col="Name")
         for pokeType in typeList:
             coloumn = typingChart[pokeType]
             typeRow = coloumn[coloumn == "2"]
@@ -32,7 +32,7 @@ class wandrMain():
                 return None
             
     def getWeakness(self, typeList, returnType="giveList"):
-        typingChart = pd.read_csv("data/typingChart.csv", index_col="Name")
+        typingChart = pd.read_csv("src/data/typingChart.csv", index_col="Name")
         weaknesses = []
 
         for poketype in typeList:
@@ -52,7 +52,7 @@ class wandrMain():
  
         
     def getResistance(self, typeList, returnType="giveList"):
-        typingChart = pd.read_csv("data/typingChart.csv", index_col="Name")
+        typingChart = pd.read_csv("src/data/typingChart.csv", index_col="Name")
         resistances = []
 
         for poketype in typeList:
