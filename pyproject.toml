@@ -1,0 +1,22 @@
+[build-system]
+requires = ["json, pandas, csv"]
+build-backend = "wandr.build
+
+[project]
+name = "WANDR"
+version = "0.5.0"
+authors = [
+  { name="Muslum Abd Ali", email="mabddevtoronto@gmail.com" },
+]
+description = "A prerequisite package for autoLocke that recieves a pokemon's name and returns it's types, weaknesses and resistance"
+readme = "README.md"
+requires-python = ">=3.3"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/muabdali/WANDR"
+"Bug Tracker" = "https://github.com/muabdali/WANDR/issues"
