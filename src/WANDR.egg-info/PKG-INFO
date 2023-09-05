@@ -1,3 +1,17 @@
+Metadata-Version: 2.1
+Name: WANDR
+Version: 0.5.0
+Summary: A prerequisite package for autoLocke that receives a Pokémon's name and returns its types, weaknesses, and resistance.
+Author-email: Muslum Abd Ali <mabddevtoronto@gmail.com>
+Project-URL: homepage, https://github.com/muabdali/WANDR
+Project-URL: bugtracker, https://github.com/muabdali/WANDR/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.3
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
 # WANDR (Weakness and Resistance Tool)
 
 WANDR is a prerequisite for autoLocke, but is also available for use by others.

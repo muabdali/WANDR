@@ -61,7 +61,6 @@ class wandrMain():
             
             if not typeWeaknesses.empty:
                 resistances.extend(typeWeaknesses.index.tolist())
-        print(resistances)
         if returnType == "giveList":
             return resistances
         elif returnType == "giveDict":
@@ -92,7 +91,6 @@ class wandrMain():
         }
         for elemental in weaknessList:
             weaknessDict[elemental] += 2
-        print(weaknessDict)
         return weaknessDict
     
     def resistanceCleanup(self, resistanceList):
@@ -117,7 +115,6 @@ class wandrMain():
         }
         for elemental in resistanceList:
             resistanceDict[elemental] -= 2
-        print(resistanceDict)
         return resistanceDict
 
             
@@ -127,7 +124,12 @@ class wandrMain():
     # For example, Charmander would return Grass, Ice, Steel and bug because those are the types that get hit 2x from fire.
     
    
-    
+
+wM = wandrMain()
+types = wM.getTyping("Scyther")
+res = wM.getWeakness(typeList=types,returnType="giveDict")
+print(res)
+
 """
 
 Welcome to the main python file for WANDR. Initially made for autoLocke,
@@ -150,7 +152,6 @@ Example:
 
 ia = wandrMain()
 types = ia.getTyping("CHARMANDER")
-ia.getWeakness(types)
 
 The following code uses Charmander as an example.
 getTyping would return a list of the pokemon's types, in this case it would return
